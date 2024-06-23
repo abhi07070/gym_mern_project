@@ -4,10 +4,11 @@ import React, { useState } from "react";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const signupForm = async () => {
     try {
       const response = await axios.post(
-        "https://gym-backend-beta.vercel.app/api/user/signup",
+        `${process.env.REACT_APP_API_URL}/user/signup`,
         {
           email,
           password,
